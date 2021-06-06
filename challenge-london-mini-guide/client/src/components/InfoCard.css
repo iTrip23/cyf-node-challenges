@@ -1,0 +1,6 @@
+.info-card {
+  /* background:black; */
+  display:inline-block;
+  width: 200px;
+  border: 2px red solid;
+}

@@ -1,10 +1,10 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import Button from './components/Button.js';
-import InfoCard from './components/InfoCard.js';
+import InfoCardContainer from './components/InfoCardContainer.js';
 
 function App() {
-  const [cityData, setCityData] = useState(null);
+  const [cityData, setCityData] = useState("harrow");
   const [boroughInfo, setBoroughInfo] = useState(null);
 
   const allCities = ['harrow', 'stratford', 'heathrow'];
@@ -30,13 +30,12 @@ function App() {
           {allCities.map((elem, index) => <option key={index} value={elem}>{elem}</option>)}
         </select>
       </div>
+      
       <div className='button-container'>
         {cityData === null ? <h1>Loading...</h1> : Object.keys(cityData).map((elem, index) => <Button
           name={elem} key={index} setBoroughInfo={setBoroughInfo} cityData={cityData} />)}
       </div>
-      <div className='info-card-container'>
-        {boroughInfo && boroughInfo.map((elem, index) => <InfoCard info={elem} key={index} />)}
-      </div>
+     <InfoCardContainer boroughInfo={boroughInfo}/>
     </div>
   );
 }
