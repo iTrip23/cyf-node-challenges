@@ -1,6 +1,6 @@
-const Button = ({ name }) => {
+const Button = ({ name, setBoroughInfo, cityData }) => {
 	return (
-		<button>{name}</button>
+		<button onClick={() => setBoroughInfo(cityData[name])}>{name}</button>
 	)
 }
 
