@@ -16,9 +16,9 @@ const stratford = require('../data/Stratford.json');
 const harrow = require('../data/Harrow.json');
 const heathrow = require('../data/Heathrow.json');
 
-const allCities = [stratford, harrow, heathrow];
+const allCitiesData = [stratford, harrow, heathrow];
 
-app.get('/allcities', (req, res) => res.send(allCities));
+app.get('/allcities', (req, res) => res.send(allCitiesData));
 
 // Stratford
 app.get('/stratford', (req, res) => res.send(stratford));
