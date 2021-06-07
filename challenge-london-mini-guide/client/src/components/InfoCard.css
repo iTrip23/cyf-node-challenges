@@ -2,5 +2,8 @@
   /* background:black; */
   display:inline-block;
   width: 200px;
+  /* height:300px; */
+  /* padding:5px; */
+  margin:20px;
   border: 2px red solid;
 }
