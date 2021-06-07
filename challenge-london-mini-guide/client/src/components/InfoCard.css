@@ -1,6 +1,5 @@
-.info-card {
-  /* background:black; */
-  display:inline-block;
-  width: 200px;
-  border: 2px red solid;
+.card-info {
+	background-color: #e7f2f8;
+	display: inline-block;
+	/* height: 30rem; */
 }
