@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+.info-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin:20px;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+=======
 /* .info-card-container {
 	display: flex;
 	align-items: center;
@@ -5,3 +15,4 @@
 	flex-wrap: wrap;
 	flex-direction: row;
 } */
+>>>>>>> 2d765fefa1f15464f7926e688a5378c96d20e530
