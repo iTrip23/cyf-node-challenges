@@ -1,0 +1,4 @@
+.btn-type-business:focus {
+	background: blue;
+	color: whitesmoke;
+}

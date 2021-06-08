@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .info-card {
   /* background:black; */
   display:inline-block;
@@ -6,4 +7,10 @@
   /* padding:5px; */
   margin:20px;
   border: 2px red solid;
+=======
+.card-info {
+	background-color: #e7f2f8;
+	display: inline-block;
+	/* height: 30rem; */
+>>>>>>> 2d765fefa1f15464f7926e688a5378c96d20e530
 }
