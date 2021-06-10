@@ -38,5 +38,4 @@ app.get('/:city/:category', (req, res) => {
 	}
 })
 
-
 app.listen(PORT, (req, res) => console.log(`App is working on ${PORT}`));
