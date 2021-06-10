@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 3005;
 
 const corsOptions = {
 	origin: 'http://localhost:3000'
@@ -16,29 +16,27 @@ const stratford = require('../data/Stratford.json');
 const harrow = require('../data/Harrow.json');
 const heathrow = require('../data/Heathrow.json');
 
-const allCitiesData = [stratford, harrow, heathrow];
+const allCitiesData = { stratford, harrow, heathrow };
 
 app.get('/allcities', (req, res) => res.send(allCitiesData));
 
-// Stratford
-app.get('/stratford', (req, res) => res.send(stratford));
-app.get('/stratford/pharmacies', (req, res) => res.send(stratford.pharmacies));
-app.get('/stratford/hospitals', (req, res) => res.send(stratford.hospitals));
-app.get('/stratford/doctors', (req, res) => res.send(stratford.doctors));
-app.get('/stratford/colleges', (req, res) => res.send(stratford.colleges));
+app.get('/:city/', (req, res) => {
+	const ifFound = Object.keys(allCitiesData).includes(req.params.city);
+	if (ifFound) {
+		res.status(200).send(allCitiesData[req.params.city]);
+	} else {
+		res.status(404).send(`Not a valid city,\n PLease choose one of these ${Object.keys(allCitiesData)}`)
+	}
+});
 
-// Harrow
-app.get('/harrow', (req, res) => res.send(harrow));
-app.get('/harrow/pharmacies', (req, res) => res.send(harrow.pharmacies));
-app.get('/harrow/hospitals', (req, res) => res.send(harrow.hospitals));
-app.get('/harrow/doctors', (req, res) => res.send(harrow.doctors));
-app.get('/harrow/colleges', (req, res) => res.send(harrow.colleges));
+app.get('/:city/:category', (req, res) => {
+	const ifFound = Object.keys(allCitiesData[req.params.city]).includes(req.params.category);
+	if (ifFound) {
+		res.status(200).send(allCitiesData[req.params.city][req.params.category]);
+	} else {
+		res.status(404).send(`Not a valid category,\n PLease choose one of these ${Object.keys(allCitiesData[req.params.city])}`)
+	}
+})
 
-// Heathrow
-app.get('/heathrow', (req, res) => res.send(heathrow));
-app.get('/heathrow/pharmacies', (req, res) => res.send(heathrow.pharmacies));
-app.get('/heathrow/hospitals', (req, res) => res.send(heathrow.hospitals));
-app.get('/heathrow/doctors', (req, res) => res.send(heathrow.doctors));
-app.get('/heathrow/colleges', (req, res) => res.send(heathrow.colleges));
 
 app.listen(PORT, (req, res) => console.log(`App is working on ${PORT}`));
