@@ -11,8 +11,9 @@ function App() {
   const allCities = ['harrow', 'stratford', 'heathrow'];
 
   const getData = async (cityName) => {
-    const response = await fetch(`http://localhost:3003/${cityName}`)
+    const response = await fetch(`http://localhost:3005/${cityName}`)
     const data = await response.json();
+    console.log(data);
     setCityData(data);
   }
 
