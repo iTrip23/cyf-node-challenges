@@ -7,14 +7,17 @@ const Header = ({ setCityName, cityData, setBusinessType }) => {
 	return (
 		<header>
 			<div className='first-layer'>
-				<button className="btn btn-info">Api Documentation</button>
-				<div className="city-buttons">
-					{allCities.map((city, index) => <button key={index} className="btn btn-info"
+				<button className="btn btn-info btn-sm">Api Documentation</button>
+				<select onChange={(e) => setCityName(e.target.value)}>
+					{allCities.map((city, index) => <option key={index}>{city}</option>)}
+				</select>
+				{/* <div className="city-buttons">
+					{allCities.map((city, index) => <button key={index} className="btn btn-info btn-sm"
 						onClick={() => setCityName(city)}>{city}</button>)}
-				</div>
+				</div> */}
 			</div>
 			<div className='business-buttons'>
-				{cityData && Object.keys(cityData).map((category, index) => <button key={index} className="btn btn-info"
+				{cityData && Object.keys(cityData).map((category, index) => <button key={index} className="btn btn-info btn-sm"
 					onClick={() => setBusinessType(category)}>{category}</button>)}
 			</div>
 		</header>
