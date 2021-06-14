@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { useState, useEffect } from 'react';
-import InfoCardContainer from './components/InfoCardContainer.js';
+// import InfoCardContainer from './components/InfoCardContainer.js';
 import Header from './components/Header';
 import Main from './components/Main';
 import TableComponent from './components/TableComponent';
@@ -39,7 +39,7 @@ function App() {
       <Header setCityName={setCityName} cityData={cityData} setBusinessType={setBusinessType} />
       <Main cityName={cityName} businessType={businessType} />
       <TableComponent boroughInfo={boroughInfo} />
-      <InfoCardContainer boroughInfo={boroughInfo} />
+      {/* <InfoCardContainer boroughInfo={boroughInfo} /> */}
     </div>
   );
 }
